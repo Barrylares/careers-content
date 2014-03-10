@@ -1,0 +1,31 @@
+/* 
+This rule uses the universal selector, *, to apply the border-box model to all elements on a site
+ 
+see Paul Irish article for where these styles came from and more on why to do it:
+http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+ 
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+ 
+/* This is not the only thing you should do for responsive images, but it is a start. Remember that this style will not make your image or video grow any bigger than the original so you have to put in the largest version you will need.
+That can be a performance issue since small screens will download the same image as large ones.
+This article by Luke Wroblewski goes into more detail about that: http://www.lukew.com/ff/entry.asp?1851
+*/
+img,video{
+  width: auto; 
+  max-width: 100%; 
+  height: auto;
+}
+ 
+/* This is an alternate version where the image or video element will grow to fill the width of the containing element. This means if your image is 300px wide and the container is 500px it will grow to 500px. Because enlarging the image can cause pixellation use this with caution. Sometimes people use this for only the video element */
+/* 
+img, video{
+  width: 100%;
+  height: auto;
+}
+*/    
